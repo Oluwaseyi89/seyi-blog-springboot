@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.3'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.deextralucidtechworld.seyi_blog'
+
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Core Spring Boot starters used by this project
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Validation (used by controllers/models if needed)
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // Development tools (optional, only on dev classpath)
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // PostgreSQL driver (project switched to Postgres)
+    runtimeOnly 'org.postgresql:postgresql'
+
+        // Dotenv support
+        implementation 'io.github.cdimascio:dotenv-java:3.0.0'
+
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
