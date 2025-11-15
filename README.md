@@ -22,9 +22,9 @@ A modern, container-ready Spring Boot blog platform with PostgreSQL support, fil
 ### Environment Variables
 Create a `.env` file in the project root (see `.env.example`):
 ```
-POSTGRES_DB=seyi_blog_db
-POSTGRES_USER=seyi_blog_user
-POSTGRES_PASSWORD=seyiblog123
+POSTGRES_DB=your_db
+POSTGRES_USER=your_db_user
+POSTGRES_PASSWORD=your_db_password
 ```
 
 ### Running Locally
@@ -41,11 +41,11 @@ POSTGRES_PASSWORD=seyiblog123
 ### Running with Docker
 1. Build the Docker image:
    ```sh
-   docker build -t seyi-blog-app .
+   docker build -t seyi-blog-service .
    ```
 2. Run the container:
    ```sh
-   docker run --env-file .env -p 8080:8080 seyi-blog-app
+   docker run --env-file .env -p 8080:8080 seyi-blog-service
    ```
 
 ### Testing
